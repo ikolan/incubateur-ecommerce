@@ -1,0 +1,7 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_URI} !^/build
+RewriteCond %{REQUEST_URI} !^/bundles
+RewriteCond %{REQUEST_URI} !^/favicon.ico
+RewriteRule ^(.*)$ index.php
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]

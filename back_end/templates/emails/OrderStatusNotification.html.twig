@@ -1,0 +1,18 @@
+{% extends "emails/base.html.twig" %}
+
+{% block body %}
+
+	<h1>Bonjour
+		{{ order.orderUser.firstName }},</h1>
+
+	<br/><br/>
+
+	<p>
+		Craft Computing vous informe que le statut de votre commande n°<b>{{ order.orderReference }}</b> a été changé.
+        <br>
+        <br>
+        <p>Le statut de votre commande est maintenant: </p>
+        <h2>{{ order.status.label }}</h2>
+	</p>
+
+{% endblock %}

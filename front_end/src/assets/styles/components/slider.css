@@ -1,0 +1,18 @@
+.slider {
+}
+
+.slider-track {
+    @apply relative h-[5px] top-[7px] bg-gray-300 rounded;
+}
+
+.slider-track-1 {
+    @apply bg-primary;
+}
+
+.slider-thumb {
+    @apply absolute w-[20px] h-[20px] rounded-[7px] bg-primary border-2 border-primary-dark;
+}
+
+.slider-thumb:hover {
+    @apply cursor-pointer scale-125;
+}

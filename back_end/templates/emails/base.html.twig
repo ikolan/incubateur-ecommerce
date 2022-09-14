@@ -1,0 +1,5 @@
+{% apply inline_css(source('foundation-emails.css'), source('emails.css')) %}
+    {% block body %}
+    {% endblock %}
+    {% include "emails/footer.html.twig" %}
+{% endapply %}

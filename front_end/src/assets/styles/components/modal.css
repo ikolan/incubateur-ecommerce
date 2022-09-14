@@ -1,0 +1,7 @@
+.modal {
+    @apply bg-white absolute p-4 rounded-md shadow max-w-md w-full space-y-8;
+}
+
+#modal {
+    margin: 0;
+}

@@ -1,0 +1,23 @@
+{% extends "emails/base.html.twig" %}
+
+{% block body %}
+
+	<h1>Bienvenue
+		{{ firstName }}.</h1>
+
+	<br/><br/>
+
+	<p>
+		<b>Craft Computing</b>
+		est heureux de vous compter parmi ces membres.
+		<br/>
+		Afin de profiter de nos services, veuillez activer votre compte en cliquant sur le lien ci-dessous.
+	</p>
+
+	<br/>
+
+	<div>
+		<a href="{{ activationLink }}">{{ activationLink }}</a>
+	</div>
+
+{% endblock %}

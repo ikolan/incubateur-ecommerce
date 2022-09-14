@@ -1,0 +1,18 @@
+{% extends "emails/base.html.twig" %}
+
+{% block body %}
+
+<h1>Un message de contact a été envoyer depuis Craft Computing.</h1>
+
+<br/><br/><br/>
+
+<p>
+    Nom: {{ lastName }}<br/>
+    Prénom: {{ firstName }}<br/>
+    Email: {{ senderEmail }}<br/>
+    Date: {{ date }}<br/><br/>
+    Sujet: {{ subject }}<br/><br/><br/>
+    {{ message }}
+</p>
+
+{% endblock %}

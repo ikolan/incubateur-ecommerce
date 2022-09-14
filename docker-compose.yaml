@@ -1,0 +1,32 @@
+# Docker compose file for a basic developement environment.
+# For using it, copy it next to back_end and front_end folders.
+
+services:
+  front_end:
+    build:
+      context: ./front_end
+      dockerfile: Dockerfile.dev
+    ports:
+      - 127.0.0.1:3000:3000
+    volumes:
+      - ./front_end:/app
+    links:
+      - back_end
+  back_end:
+    build:
+      context: ./back_end
+      dockerfile: Dockerfile.dev
+    ports:
+      - 127.0.0.1:8000:80
+    volumes:
+      - ./back_end:/var/www/html
+    links:
+      - database
+  database:
+    image: postgres:13
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 127.0.0.1:5432:5432
+    volumes:
+      - ./.db_data:/var/lib/postgresql/data

@@ -1,0 +1,43 @@
+@tailwind base;
+
+@layer base {
+    html {
+        @apply h-full;
+    }
+    body {
+        @apply h-full;
+    }
+
+    /* TABLES */
+    table {
+        @apply border-2 border-collapse;
+    }
+
+    thead {
+        @apply bg-gray-100;
+    }
+
+    th, td {
+        @apply p-2 border  border-collapse;
+    }
+
+    /* TYPOGRAPHIE */
+    h1 {
+        @apply text-6xl font-title font-bold;
+    }
+    h2 {
+        @apply text-5xl font-title font-bold;
+    }
+    h3 {
+        @apply text-4xl font-title font-bold;
+    }
+    h4 {
+        @apply text-3xl font-title font-bold;
+    }
+    h5 {
+        @apply text-2xl font-title font-bold;
+    }
+    h6 {
+        @apply text-xl font-title font-bold;
+    }
+}

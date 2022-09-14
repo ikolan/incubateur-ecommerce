@@ -1,0 +1,20 @@
+{% extends "emails/base.html.twig" %}
+
+{% block body %}
+
+	<h1>Bonjour
+		{{ firstName }}.</h1>
+
+    <br /><br />
+
+	<p>
+		Suite à votre demande, veuillez cliquez sur le lien ci-dessous pour réactiver votre compte.
+	</p>
+
+    <br />
+
+	<div>
+		<a href="{{ activationLink }}">{{ activationLink }}</a>
+	</div>
+
+{% endblock %}
