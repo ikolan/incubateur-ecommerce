@@ -9,8 +9,8 @@ import FrontProducts from './products/FrontProducts';
 export const Home = () => {
     return (
         <>
-            <div className="h-[calc(100vh-300px)] bg-secondary flex flex-col justify-center items-center">
-                <h1 className="text-white text-8xl mb-28">Bienvenue chez</h1>
+            <div className="min-h-[90vh] bg-secondary flex flex-col justify-center items-center">
+                <h1 className="text-white text-6xl mb-28">Bienvenue chez</h1>
                 <img src={logo} alt="Craft Computing logo" width="600px" />
             </div>
             <div className="m-24">

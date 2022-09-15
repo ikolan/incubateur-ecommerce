@@ -14,6 +14,7 @@ import userIcon from '../../assets/icons/user.svg';
 import { Button } from '../utils/Button';
 import Input from '../utils/Input';
 import { NavbarIconButton } from '../utils/NavbarIconButton';
+import { Spinner } from '../utils/Spinner';
 import logo from './../../assets/images/logo.png';
 import {
     URL_ADMIN_HOME,
@@ -28,30 +29,40 @@ import { accountRoles } from './../../services/accountServices';
 
 const Navbar = () => {
     const [categories, setCategories] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         backendApi.category.getAll().then((response) => {
             setCategories(
                 response.data['hydra:member'].map((category) => category.label),
             );
+            setIsLoading(false);
         });
     }, []);
 
     const menu = (
         <NavbarMenu>
-            {categories.map((category) => {
-                let url = new URLSearchParams();
-                url.set('category', category);
-                return (
-                    <NavbarMenuItem
-                        key={category}
-                        link={URL_PRODUCTS_HOME + '?' + url.toString()}
-                    >
-                        {category}
+            {isLoading ? (
+                <Spinner mode="line" legend="Chargement ..." lightMode />
+            ) : (
+                <>
+                    {categories.map((category) => {
+                        let url = new URLSearchParams();
+                        url.set('category', category);
+                        return (
+                            <NavbarMenuItem
+                                key={category}
+                                link={URL_PRODUCTS_HOME + '?' + url.toString()}
+                            >
+                                {category}
+                            </NavbarMenuItem>
+                        );
+                    })}
+                    <NavbarMenuItem link={URL_PRODUCTS_HOME}>
+                        Tous nos produits
                     </NavbarMenuItem>
-                );
-            })}
-            <NavbarMenuItem link={URL_PRODUCTS_HOME}>Tous nos produits</NavbarMenuItem>
+                </>
+            )}
         </NavbarMenu>
     );
 

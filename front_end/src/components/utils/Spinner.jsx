@@ -36,6 +36,7 @@ export const Spinner = ({
 
     if (lightMode) {
         legendClassName += ' text-white';
+        spinnerClassName += ' border-white';
     }
 
     return (
